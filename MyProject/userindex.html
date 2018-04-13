@@ -1,0 +1,168 @@
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script>
+		function val()
+			{
+				var x1=document.form.n1.value;
+				{
+					if(x1 != "")
+					{
+						for(i=0;i<x1.length;i++)
+						{
+							if(!((x1.charCodeAt(i) >= 65 && x1.charCodeAt(i) <= 90 ) || (x1.charCodeAt(i) >= 97 && x1.charCodeAt(i) <= 122 )))
+							{
+								alert("Please Enter Capital letters only in NAME Field");
+								return false;
+							}
+						}
+					}
+					else
+					{
+						alert("NAME Cannot Be Empty!!");
+						return false;
+						
+					}
+					
+				}
+				var x2=document.form.n2.value;
+				{
+					if(x2 != "")
+					{
+						for(i=0;i<x2.length;i++)
+						{
+							if(!((x2.charCodeAt(i) >= 65 && x2.charCodeAt(i)<=90 )||(x1.charCodeAt(i) >= 97 && x1.charCodeAt(i) <= 122 )))
+							{
+								alert("Please Enter Capital letters only in FATHER'S NAME Field");
+								return false;
+							}
+						}
+					}
+					else
+					{
+						alert("FATHER'S NAME Cannot Be Empty!!");
+						return false;
+						
+					}
+				}
+				var x3=document.form.n3.value;
+				{
+					if(x3 != "")
+					{
+						for(i=0;i<x3.length;i++)
+						{
+							if(!((x3.charCodeAt(i) >= 65 && x3.charCodeAt(i)<=90 ) || (x1.charCodeAt(i) >= 97 && x1.charCodeAt(i) <= 122 )))
+							{
+								alert("Please Enter Capital letters only in MOTHER'S NAME Field");
+								return false;
+							}
+						}
+					}
+					else
+					{
+						alert("MOTHER'S NAME Cannot Be Empty!!");
+						return false;
+						
+					}
+				}
+				var x4=document.form.n4.value;
+				{
+					if(x4=="Gender")
+					{
+						alert("Enter a valid GENDER");
+						return false;
+					}
+				}
+				var x5=document.form.n5.value;
+				{
+					if(x5=="Date")
+					{
+						alert("Enter a valid DATE");
+						return false;
+					}
+				}
+				var x6=document.form.n6.value;
+				{
+					if(x6=="Month")
+						{
+							alert("Enter a valid MONTH");
+							return false;
+						}
+				}
+				var x7=document.form.n7.value;
+				{
+					if(x7=="Year")
+						{
+							alert("Enter a valid YEAR");
+							return false;
+						}
+				}
+				var x8=document.form.n8.value;
+				var x9=document.form.n9.value;
+				{
+					if(x9 != "")
+					{
+						for(i=0;i<10;i++)
+						{
+							if(i==0 || i==1)
+							{
+								if(!(x9.charCodeAt(i) >= 55 && x9.charCodeAt(i)<=57 ))
+								{
+									alert("Please Enter valid MOB NO");
+									return false;
+								}
+							}
+							else if(!(x9.charCodeAt(i) >= 47 && x9.charCodeAt(i)<=57 ))
+							{
+								alert("Please Enter NUMBERS only in MOB NO Field");
+								return false;
+							}
+						}
+					}
+					else
+					{
+						alert("MOBILE NO Cannot Be Empty!!");
+						return false;
+						
+					}
+				}
+				var x10=document.form.n10.value;
+				var x11=document.form.n11.value;
+				{
+					if(x11=="Course")
+							{
+								alert("Enter a valid COURSE");
+								return false;
+							}
+				}
+				
+				return true;
+			}
+			
+	</script>
+	</head>
+	<body>
+		<div class="container" height="auto" width="600px">
+		<form action="signup_as_user.php" method="post" submit="return val(true)" name="form">
+			<h2>Sign Up As User</h2>
+			<input type="text" name="n1" placeholder="Enter Your First Name" required>
+			<input type="text" name="n2" placeholder="Enter Your last Name" required>
+			<input type="text" name="n9" placeholder="Enter MObile No" required>
+			<input type="text" name="n10" placeholder="Enter Email id" required>
+			<select type="text" name="n4"  required>
+							<option >Gender</option>
+							<option>Male</option>	
+							<option>Female</option>
+							<option>Other</option>
+							</select>
+			<textarea  name ="textarea" rows="5" cols="20" placeholder="Enter Address" required></textarea>
+			
+			<input type="password" placeholder="Enter Yor Password" name="psw" required>
+			<div class="clearfix">
+				<button type="submit" name="submit" class="signupbtn" onclick="return val()">submit</button>
+				<button type="cancel" class="cancelbtn" name="cancel" >cancel</button>
+			</div>
+		</form>
+		</div>
+	</body>
+</html>
